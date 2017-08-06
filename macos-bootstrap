@@ -100,6 +100,11 @@ fi
 echo "Using dotfiles repo .zshrc"
 cp .zshrc ~/.zshrc
 
+# Set up git config
+echo "Setting up git config"
+git config --global user.name "Michael Poon"
+git config --global user.email michael.l.poon@gmail.com
+
 echo "******************"
 echo "TODO"
 echo "- Change iterm preferences to use Solarized Dark"
