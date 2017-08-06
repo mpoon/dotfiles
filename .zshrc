@@ -1,4 +1,5 @@
 export ZSH=/Users/mpoon/.oh-my-zsh
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 ZSH_THEME="agnoster"
 
@@ -6,8 +7,7 @@ COMPLETION_WAITING_DOTS="true"
 
 DEFAULT_USER="mpoon"
 
-plugins=(git brew docker httpie history history-substring-search npm jsontools common-aliases)
+plugins=(brew common-aliases git npm)
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+source $ZSH/oh-my-zsh.sh
 
-source /Users/mpoon/.oh-my-zsh/oh-my-zsh.sh
