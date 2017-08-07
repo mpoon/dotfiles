@@ -1,5 +1,5 @@
 export ZSH=/Users/mpoon/.oh-my-zsh
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=/usr/local/opt/python/libexec/bin:$HOME/bin:/usr/local/bin:$PATH
 
 ZSH_THEME="agnoster"
 
