@@ -27,6 +27,9 @@ sudo nvram SystemAudioVolume=" "
 # Increase window resize speed for Cocoa applications
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001
 
+# Disable transparency in the menu bar and elsewhere on
+defaults write com.apple.universalaccess reduceTransparency -bool true
+
 # Expand save panel by default
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
 defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
@@ -81,8 +84,11 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
-defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain KeyRepeat -int 2
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+# Disable acceleration for the mouse
+defaults write .GlobalPreferences com.apple.mouse.scaling -1
 
 ###############################################################################
 # Finder                                                                      #
