@@ -16,6 +16,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # General UI/UX                                                               #
 ###############################################################################
 
+# Allow Apps from Anywhere
+sudo spctl --master-disable
+
 # Set computer name (as done via System Preferences → Sharing)
 sudo scutil --set ComputerName "mpoon"
 sudo scutil --set HostName "cerealsauce"
@@ -85,7 +88,7 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 # Set a blazingly fast keyboard repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 2
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 15
 
 # Disable acceleration for the mouse
 defaults write .GlobalPreferences com.apple.mouse.scaling -1
