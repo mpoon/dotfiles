@@ -57,7 +57,6 @@ CASKS=(
     dropbox
     google-chrome
     iterm2
-    omnifocus
     keka
     slack
     spectacle
