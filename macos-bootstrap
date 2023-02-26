@@ -52,6 +52,7 @@ CASKS=(
     google-chrome
     iterm2
     vlc
+    visual-studio-code
 )
 
 echo "Installing cask apps..."
