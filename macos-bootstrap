@@ -30,7 +30,7 @@ xcode-select --install
 # Check for Homebrew, install if we don't have it
 if test ! $(which brew); then
     echo "Installing homebrew..."
-    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
 # Update homebrew recipes
@@ -40,33 +40,22 @@ PACKAGES=(
     node
     python
     postgresql
-    wget
-    zsh
 )
 
 echo "Installing packages..."
 brew install ${PACKAGES[@]}
 
 echo "Installing cask..."
-brew tap caskroom/cask
 
 CASKS=(
     1password
-    battle-net
-    deluge
-    dropbox
     google-chrome
     iterm2
-    keka
-    slack
-    spectacle
-    spotify
-    steam
     vlc
 )
 
 echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
+brew install --cask ${CASKS[@]}
 
 echo "Cleaning up..."
 brew cleanup
@@ -83,17 +72,6 @@ echo "Installing oh my zsh"
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 echo "Post-install set up"
-
-# Make zsh be the default shell
-sudo sh -c 'echo "$(which zsh)" >> /etc/shells'
-chsh -s $(which zsh)
-
-# Actually install Battle.net
-if [ ! -d /Applications/Battle.net.app ]; then
-    open /usr/local/Caskroom/battle-net/latest/Battle.net-Setup.app
-else
-    echo "Battle.net already installed"
-fi
 
 # Use .zshrc from dotfiles repo
 echo "Using dotfiles repo .zshrc"
