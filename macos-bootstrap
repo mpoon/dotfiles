@@ -57,19 +57,18 @@ CASKS=(
 echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
 
-echo "Cleaning up..."
-brew cleanup
-brew cask cleanup
-
 echo "Installing fonts..."
-brew tap caskroom/fonts
+brew tap homebrew/cask-fonts
 FONTS=(
     font-menlo-for-powerline
 )
-brew cask install ${FONTS[@]}
+brew install ${FONTS[@]}
+
+echo "Cleaning up..."
+brew cleanup
 
 echo "Installing oh my zsh"
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "Post-install set up"
 
