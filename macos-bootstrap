@@ -59,11 +59,7 @@ echo "Installing cask apps..."
 brew install --cask ${CASKS[@]}
 
 echo "Installing fonts..."
-brew tap homebrew/cask-fonts
-FONTS=(
-    font-menlo-for-powerline
-)
-brew install ${FONTS[@]}
+brew install --cask font-menlo-for-powerline
 
 echo "Cleaning up..."
 brew cleanup
